@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var data = prompt("Введите число");
+  console.log(data);
+  alert("Вы ввели: " + data)
+
+  var first = Number (prompt("Введите 1ое число: "));
+  var second = Number (prompt("Введите 2ое число: "));
+  var sum = first + second;
+  var min = first - second;
+  var minrev = second - first;
+  var mul = first * second;
+  var div = first / second;
+  var div2 = second / first;
+
+  document.write(first + " + " + second + " = "  + sum + "<br>");
+  document.write(first + " - " + second + " = "  + min+ "<br>");
+  document.write(second + " - " + first + " = "  + minrev+ "<br>");
+  document.write(first + " * " + second + " = "  + mul+ "<br>");
+  document.write(first + " / " + second + " = "  + div+ "<br>");
+  document.write(second + " / " + first + " = "  + div2+ "<br>");
+
+  alert("Задумайте число");
+  alert("Умножьте его на 2");
+  alert("Затем прибавьте 7");
+  var inputt = prompt("Введите получившееся чило");
+  var guessed = (Number(inputt) - 7) / 2;
+  document.write("Вы загадали: " + guessed+ "<br>");
+
+  var name = prompt("Введите ваше имя");
+  var age = prompt("Введите год рождения");
+  var currentTime = new Date()
+  var thisyear = currentTime.getFullYear();
+  var age2 = thisyear - Number(age);
+  document.write(name +": "+ age2 );
+ </script>
+</body>
+</html>
