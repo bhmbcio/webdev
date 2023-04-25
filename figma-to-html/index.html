@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Calligraffitti&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet" />
+        <link href="./css/main.css" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="v5_7">
+            <div class="v5_8"></div>
+            <div class="v5_9"></div>
+            <span class="v5_10">THE D<span id="bigO">O</span>NUT</span>
+            <span class="v5_11">So good you'll lose your mind.</span>
+            <div class="v5_12"></div>
+            <span class="v5_13">MENU CAFES DELIVERY JOBS CONTACT </span>
+        </div>
+    <script>
+        const btn = document.getElementById('bigO')
+        btn.addEventListener('click', function master(){
+            var master = document.getElementsByClassName("v5_10");
+            master[0].style.color = 'green';
+        })
+    </script>
+    <script>
+        fetch("https://644808407bb84f5a3e507b3b.mockapi.io/we/secrets/")
+            .then((response) => {
+                return response.json();
+                })
+            .then((data) => {
+                console.log(data);
+            });
+    </script>
+
+    </body>
+</html>
