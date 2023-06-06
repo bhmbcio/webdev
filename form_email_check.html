@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script>
+      function Complete1()
+        {   
+            // const re = /\S+@\S+\.\S+/;
+            // if(!document.Sel3.eml.value.match(re))
+            //   alert('Неверный e-mail')
+            if(document.Sel3.eml.value==document.Sel3.eml1.value)
+                alert("Вас зарегистрировали\nID="+document.Sel3.Id.value+"\nPassword="+document.Sel3.eml.value);
+            // else
+            //     alert("Ошибка при вводе e-mail\nПопробуйте еще раз");
+        }
+      const emailInput = document.getElementById("email");
+      const emailError = document.getElementById("email-error");
+      emailInput.addEventListener("invalid", function(event) {
+        event.preventDefault();
+        emailError.style.display = "block";
+      });
+      emailInput.addEventListener("input", function(event) {
+        emailError.style.display = "none";
+        Complete1();
+      });
+      
+    </script>
+</head>
+<body>
+<H1 text-align="center">Регистрация</H1>
+<div class="rounded-3 p-3 bg-dark text-white w-50">
+<FORM NAME="Sel3">
+    <TABLE>
+        <TR><TD><B>Идентификатор:<B></TD>
+            <TD><INPUT NAME="Id" SIZE=20
+                       onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+        <TR><TD><B>E-mail:<B></TD>
+            <TD><INPUT id="email" TYPE="email" NAME="eml" SIZE=20
+                       onFocus="this.select();"></TD></TR>
+        <span id="email-error" style="display: none;">Неверно введен адрес.</span>
+        <TR><TD><B>Проверка e-mail:<B></TD>
+            <TD><INPUT id="email2" TYPE="email" NAME="eml1" SIZE=20
+                       onFocus="this.select();"></TD></TR>
+    </TABLE>
+    <INPUT TYPE="submit" VALUE="Готово" >
+    
+    <INPUT TYPE="reset" VALUE="Сброс">
+</FORM>
+
+</div>
+</body>
+
+</html>
