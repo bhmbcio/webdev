@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Check test</title>
+</head>
+<body>
+
+<script>
+fetch('https://647f6bdfc246f166da90baab.mockapi.io/actors')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data.filter((actor) => {
+      return actor.gender == 'male';
+    }));
+  });
+</script>
+
+</body>
+</html>
