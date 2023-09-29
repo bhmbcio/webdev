@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bad+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  </head>
+<body>
+  <div id="root"></div>
+</body>
+<!-- This setup is not suitable for production. -->
+<!-- Only use it in development! -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+let App = function MyApp() {
+  return (
+    
+    <section>
+      <NavBar />
+      <div className="page">
+        <div className="titleDiv">
+          <Title />
+          <Description />
+          </div>
+        <div className="flex-container">
+          <div className="item1"><Pic1 /><br/><br/><MyButton /></div>
+          <div className="item2"><Pic2 /><br/><br/><MyButton /></div>
+          <div className="item3"><Pic3 /><br/><br/><MyButton /></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Title() {
+  return (
+  <h1>Фрукты</h1>
+  );
+}
+
+function Description() {
+  return (
+  <h3>Сочнейшие фрукты из самых дальних уголков планеты.</h3>
+  );
+}
+
+function Pic1() {
+  return (
+    <img className="pic" src="https://i.pinimg.com/originals/5e/dc/aa/5edcaad1d15c04a088145023a0358208.jpg"/>
+  );
+}
+
+function Pic2() {
+  return (
+    
+    <img className="pic" src="https://i.pinimg.com/originals/97/6d/40/976d402b8605b0452daa48776331f52c.jpg"/>
+  );
+}
+
+function Pic3() {
+  return (
+    
+    <img className="pic" src="https://i.pinimg.com/originals/c1/25/e8/c125e894d3e2f7c7cdb082339b554eef.jpg"/>
+  );
+}
+
+function MyButton() {
+  return (
+    <button className="btn btn-danger">
+      Съесть
+    </button>
+  );
+}
+
+function NavBar(){
+  return(
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <a className="navbar-brand" href="#">ФРУКТЫ</a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item active">
+            <a className="nav-link" href="#">АЗИЯ <span className="sr-only">(current)</span></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">ЕВРОПА</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">АМЕРИКА</a>
+          </li>
+
+        </ul>
+      </div>
+  </nav>
+  );
+}
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+</script>
+
+<style>
+
+.nav-link{
+  font-family: "Poiret One", sans-serif;
+}
+
+.navbar-light, .navbar-brand {
+  font-family: "Bad Script", sans-serif !important;
+  color: #52050D !important;
+}
+
+.titleDiv{
+  padding: 20px;
+  /* font-family: "Pacifico", sans-serif;  */
+}
+
+.page {
+  align-items: left;
+}
+
+img.pic {
+   width: 200px;
+   height: 350px;
+}
+
+.flex-container {
+
+display: flex;
+
+justify-content: space-between; 
+align-items: flex-start;    
+align-content: center;
+
+/* background-color: #bbdefb; */
+height: 100%;
+padding: 15px;
+gap: 5px;
+
+}
+
+.flex-container > div{
+/* background: #ffecb3; */
+/* border: 3px solid #ffcc80; */
+/* border-radius: 5px; */
+padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: sans-serif; */
+  /* margin: 20px; */
+  padding: 0;
+}
+
+h1 {
+  font-family: "Pacifico", sans-serif; 
+  margin-top: 0;
+  font-size: 22px;
+  color: red;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+  font-family: "Poiret One", sans-serif;
+  color: grey;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+button {
+  display: block;
+  margin-bottom: 5px;
+}
+
+</style>
+</html>
